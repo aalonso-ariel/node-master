@@ -2,16 +2,10 @@
 
 var _express = _interopRequireDefault(require("express"));
 
+var _consign = _interopRequireDefault(require("consign"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var PORT = 3000; //APP SETUP
+var app = (0, _express["default"])(); //APP CONSIGN ROUTING
 
-var app = (0, _express["default"])();
-app.get("/", function (req, res) {
-  return res.json({
-    status: "Node Master API"
-  });
-});
-app.listen(PORT, function () {
-  return console.log("Node Master API - porta ".concat(PORT));
-});
+(0, _consign["default"])().include("models").then("libs/middle.js").then("routes").then("libs/boot.js").into(app);
