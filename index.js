@@ -1,4 +1,5 @@
 import express from 'express';
+import consign from 'consign';
 
 const PORT = 3000;
 
@@ -6,17 +7,10 @@ const PORT = 3000;
 const app = express();
 app.set("json spaces", 4);
 
-//APP ROUTES
-app.get("/", (req, res) => res.json({status: "Node Master API"}));
-
-app.get("/tasks", (req,res) => {
-    res.json({
-        tasks: [
-            {title: "Fazer compras"},
-            {title: "Consertar o pc"}
-        ]
-    });
-});
+//APP CONSIGN ROUTING
+consign()
+    .include("routes")
+    .into(app);
 
 app.listen(PORT, () => console.log(`Node Master API - porta ${PORT}`));
 

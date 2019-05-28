@@ -7,6 +7,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var PORT = 3000; //APP SETUP
 
 var app = (0, _express["default"])();
+app.set("json spaces", 4); //APP ROUTES
+
 app.get("/", function (req, res) {
   return res.json({
     status: "Node Master API"
