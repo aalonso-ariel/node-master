@@ -12,6 +12,15 @@ app.get("/", function (req, res) {
     status: "Node Master API"
   });
 });
+app.get("/tasks", function (req, res) {
+  res.json({
+    tasks: [{
+      title: "Fazer compras"
+    }, {
+      title: "Consertar o pc"
+    }]
+  });
+});
 app.listen(PORT, function () {
   return console.log("Node Master API - porta ".concat(PORT));
 });

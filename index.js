@@ -4,6 +4,9 @@ const PORT = 3000;
 
 //APP SETUP
 const app = express();
+app.set("json spaces", 4);
+
+//APP ROUTES
 app.get("/", (req, res) => res.json({status: "Node Master API"}));
 
 app.get("/tasks", (req,res) => {
