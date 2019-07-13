@@ -8,4 +8,4 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var app = (0, _express["default"])(); //APP CONSIGN ROUTING
 
-(0, _consign["default"])().include("models").then("libs/middle.js").then("routes").then("libs/boot.js").into(app);
+(0, _consign["default"])().include("db.js").then("models").then("libs/middle.js").then("routes").then("libs/boot.js").into(app);
