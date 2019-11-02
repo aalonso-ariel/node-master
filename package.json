@@ -27,7 +27,7 @@
     "consign": "^0.1.6",
     "express": "^4.17.1",
     "nodemon": "^1.19.1",
-    "sequelize": "^5.8.6",
+    "sequelize": "^5.15.1",
     "sqlite": "^3.0.3"
   }
 }
